@@ -1,0 +1,37 @@
+export GIT_SSH=ssh
+mkdir codedash
+cd codedash/
+git init
+vi .git/config 
+git config user.name vsriram77
+git config user.email "v_sram@yahoo.com"
+touch README.md
+vi README.md 
+git add README.md
+git commit -m 'README - test'
+git remote add origin git@github.com:vsriram77/codedash.git
+git push -u origin master
+# copy src to import into project
+#cp -r src pom.xml ../../tt/codedash
+find src
+git checkout -b importSimple
+git remote -v
+git status
+#set GIT_SSH
+vi ~/.bashrc
+git status
+git add pom.xml 
+git add src
+git commit -m 'importing simple sources'
+git push
+git remote -v
+git -v
+git push -u origin importSimple
+git checkout master
+git pull origin master
+git checkout -b arrays
+git status
+git commit -m 'myarrays - initial impl'
+git push -u origin arrays
+git checkout master
+git pull origin master
