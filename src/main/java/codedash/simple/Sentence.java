@@ -1,7 +1,4 @@
-package com.codedash.simple;
-
-import java.util.ArrayList;
-import java.util.List;
+package codedash.simple;
 
 /**
  * View a string as a sequence of words and support forward and reverse views

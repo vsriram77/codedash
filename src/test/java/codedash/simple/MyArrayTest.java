@@ -1,4 +1,4 @@
-package com.codedash.simple;
+package codedash.simple;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;

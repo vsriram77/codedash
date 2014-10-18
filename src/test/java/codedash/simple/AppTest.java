@@ -1,4 +1,4 @@
-package com.codedash.simple;
+package codedash.simple;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
