@@ -1,4 +1,4 @@
-package com.codedash.simple;
+package codedash.simple;
 
 /**
  * Collection backed by an array

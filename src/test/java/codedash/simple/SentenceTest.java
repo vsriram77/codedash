@@ -1,4 +1,4 @@
-package com.codedash.simple;
+package codedash.simple;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
