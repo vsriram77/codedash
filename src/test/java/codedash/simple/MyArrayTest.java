@@ -2,6 +2,8 @@ package codedash.simple;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
@@ -10,13 +12,12 @@ import org.testng.annotations.Test;
 public class MyArrayTest {
 
     private MyArray ma;
-    @BeforeClass
+    @BeforeMethod
     public void setup() {
         this.ma = new MyArray(10);
         ma.add("aa");
         ma.add("bb");
         ma.add("cc");
-
     }
 
     @Test
@@ -27,9 +28,20 @@ public class MyArrayTest {
     }
 
     @Test
-    public void testDelete() throws Exception {
-        ma.delete("bb");
+    public void testDeleteFirst() throws Exception {
+        int idx = ma.deleteFirst("bb");
+        Assert.assertEquals(idx, 1);
         Assert.assertEquals(ma.get(0), "aa");
         Assert.assertEquals(ma.get(1), "cc");
     }
+
+    @Test
+    public void testDeleteAll() throws Exception {
+        ma.add("bb");
+        int numDeleted = ma.deleteAll("bb");
+        Assert.assertEquals(numDeleted, 2);
+        Assert.assertEquals(ma.get(0), "aa");
+        Assert.assertEquals(ma.get(1), "cc");
+    }
+
 }

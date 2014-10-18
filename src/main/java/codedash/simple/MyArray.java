@@ -6,16 +6,20 @@ package codedash.simple;
 public class MyArray {
     private String[] values;
     private int top;
-    private int size;
+    private int capacity;
 
-    public MyArray(int size) {
-        this.size = size;
-        this.values = new String[size];
+    public MyArray(int capacity) {
+        this.capacity = capacity;
+        this.values = new String[capacity];
         this.top = 0;
     }
 
+    public int getLength() {
+        return this.top;
+    }
+
     public void add(String s) {
-        if (this.top >= size) {
+        if (this.top >= this.capacity) {
             throw new RuntimeException("My Array is full: error adding " + s);
         }
 
@@ -27,17 +31,42 @@ public class MyArray {
         this.top++;
     }
 
-    public void delete(String s) {
+    public int deleteFirst(String s) {
         if (s == null) {
-            return;
+            return -1;
         }
 
         for (int i = 0; i < this.top; i++) {
             if (this.values[ i ].equals(s)) {
                 moveUpTill(i);
+                return i;
             }
         }
 
+        return -1;
+    }
+
+    public int deleteAll(String s) {
+        if (s == null) {
+            return -1;
+        }
+
+        int i = 0;
+        int count = 0;
+        while (i < this.top) {
+            if (this.values[ i ].equals(s)) {
+                count++;
+                int j = i + 1;
+                for (; j < this.top && !this.values[ j ].equals(s); j++) {
+                    this.values[ j - 1 ] = this.values[ j ];
+                }
+                i = j;
+            } else {
+                i++;
+            }
+        }
+
+        return count;
     }
 
     public String get(int index) {
@@ -50,7 +79,7 @@ public class MyArray {
 
     private void moveUpTill(int index) {
         for (int i = index+1; i < this.top; i++) {
-            this.values[ i - 1] = this.values[ i ];
+            this.values[ i - 1 ] = this.values[ i ];
         }
     }
 }
