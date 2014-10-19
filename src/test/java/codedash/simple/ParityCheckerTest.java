@@ -4,11 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
- * Created with IntelliJ IDEA.
- * User: vsriram
- * Date: 10/18/14
- * Time: 8:05 AM
- * To change this template use File | Settings | File Templates.
+ * Unit tests for ParityChecker
  */
 public class ParityCheckerTest {
 

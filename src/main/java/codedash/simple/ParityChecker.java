@@ -1,7 +1,7 @@
 package codedash.simple;
 
 /**
- * Check whether given number is even or odd parity. (EPI 5.1)
+ * Check whether given number is even or odd parity.
  *
  * See http://sys.cs.rice.edu/course/comp314/10/p2/javabits.html for bit op ref
  */
