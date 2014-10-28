@@ -1,4 +1,4 @@
-package codedash.codedash.patterns.observer;
+package codedash.patterns.observer;
 
 /**
  * Observer pattern

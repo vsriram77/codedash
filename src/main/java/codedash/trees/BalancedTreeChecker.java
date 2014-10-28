@@ -1,4 +1,4 @@
-package codedash.codedash.trees;
+package codedash.trees;
 
 /**
  * Check whether a given binary tree is balanced

@@ -1,4 +1,4 @@
-package codedash.codedash.trees;
+package codedash.trees;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

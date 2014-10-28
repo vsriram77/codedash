@@ -1,4 +1,4 @@
-package codedash.codedash.trees;
+package codedash.trees;
 
 /**
  * Priority Queue (using array based Heap data structure)

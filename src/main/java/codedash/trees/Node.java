@@ -1,4 +1,4 @@
-package codedash.codedash.trees;
+package codedash.trees;
 
 /**
  * Binary tree node
