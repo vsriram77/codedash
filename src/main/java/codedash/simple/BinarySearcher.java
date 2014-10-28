@@ -31,23 +31,50 @@ public class BinarySearcher {
     /**
      * full binary search impl: Cost O(log N)
      */
-    public static int find2(int[] in, int k) {
+    public static int countOccurrences(int[] in, int k) {
 
-        int l = 0;
-        int m = in.length - 1;
-        int result = -1;
-        while (l <= m) {
-            int c = l + (m - l)/2;
+        int left = 0;
+        int right = in.length - 1;
+        boolean done = false;
+        int c = 0;
+        while (!done) {
+            c = left + (right - left)/2;
             if (in[c] < k) {
-                l = c + 1;
+                left = c + 1;
             } else if (in[c] > k) {
-                m = c - 1;
+                right = c - 1;
             } else {
-                result =  c;
-                m = c - 1;
+                if (c == 0 || in[c - 1] != k) {
+                    break;
+                }
+                right = c - 1;
             }
         }
-        return result;
+        int firstIndex = (in[c] == k)? c : -1;
+
+        if (firstIndex == -1) {
+            return -1;
+        }
+
+        left = 0;
+        right = in.length - 1;
+        done = false;
+        while (!done) {
+            c = left + (right - left)/2;
+            if (in[c] < k) {
+                left = c + 1;
+            } else if (in[c] > k) {
+                right = c - 1;
+            } else {
+                if (c == (in.length - 1) || in[c + 1] != k) {
+                    break;
+                }
+                left = c + 1;
+            }
+        }
+        int lastIndex = (in[c] == k)? c : -1;
+
+        return lastIndex - firstIndex + 1;
     }
 
     /**
