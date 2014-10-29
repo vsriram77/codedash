@@ -28,14 +28,18 @@ public class ParityChecker {
     }
 
     public static int checkParity(long value) {
+        int longSize = 64;
+        int count = longSize/4;
+
         int prevParity = 0;
-        for (int i = 0; i < 16; i++) {
-            // System.out.println(String.format("Nibble: %x (%d)", nibbleMasks[i], nibbleMasks[i]));
-            long curr = value & 0B1111;
-            int currParity = parityTable[(int) curr];
-            prevParity = prevParity ^ currParity;
+        for (int i = 0; i < count; i++) {
+            int curr = (int) value & 0B1111;
+            int cp = parityTable[ curr ];
+            prevParity = prevParity ^ cp;
             value = value >>> 4;
         }
+
         return prevParity;
     }
+
 }
