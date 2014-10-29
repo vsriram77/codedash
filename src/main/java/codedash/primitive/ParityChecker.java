@@ -1,4 +1,4 @@
-package codedash.simple;
+package codedash.primitive;
 
 /**
  * Check whether given number is even or odd parity.

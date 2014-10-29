@@ -1,4 +1,4 @@
-package codedash.simple;
+package codedash.primitive;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
