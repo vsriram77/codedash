@@ -4,27 +4,35 @@ package codedash.linkedlists;
  * Linked list Node
  */
 public class Node {
-    private String value;
-    private Node next;
+    private String _value;
+    private Node _next;
 
     public Node(String value) {
-        this.value = value;
-        this.next = null;
+        this._value = value;
+        this._next = null;
     }
 
     public String getValue() {
-        return value;
+        return _value;
+    }
+
+    public String value() {
+        return _value;
     }
 
     public void setValue(String value) {
-        this.value = value;
+        this._value = value;
     }
 
     public Node getNext() {
-        return next;
+        return _next;
+    }
+
+    public Node next() {
+        return _next;
     }
 
     public void setNext(Node next) {
-        this.next = next;
+        this._next = next;
     }
 }
