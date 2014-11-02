@@ -1,10 +1,60 @@
 package codedash.arrays;
 
+import com.google.common.base.Preconditions;
+
 /**
- * Dutch national flag problem
+ * Dutch national flag problem (epi5.1)
  */
 public class PivotedPartitioner {
 
+
+
+
+    public static void partition(int[] input, int pivotIndex) {
+        if (pivotIndex < 0 || pivotIndex >= input.length) {
+            throw new ArrayIndexOutOfBoundsException("bad index");
+        }
+
+        Preconditions.checkNotNull(input);
+
+        int minIndex = 0;
+        int maxIndex = input.length - 1;
+        int cIndex = 0;
+        int pivot = input[pivotIndex];
+
+        while (cIndex < maxIndex) {
+            if (input[cIndex] > pivot) {
+                maxIndex = pushToEnd(input, pivot, cIndex, maxIndex);
+            }
+
+            while (input[cIndex] < pivot) {
+                swap(input, cIndex, minIndex);
+                cIndex++;
+                minIndex++;
+            }
+
+            while (cIndex < maxIndex && input[cIndex] == pivot) {
+                cIndex++;
+            }
+        }
+    }
+
+    private static int pushToEnd(int[] input, int pivot, int cIndex, int maxIndex) {
+        while (input[maxIndex] > pivot && cIndex < maxIndex) {
+            maxIndex--;
+        }
+
+        swap(input, cIndex, maxIndex);
+        return maxIndex;
+    }
+
+    private static void swap(int[] input, int a, int b) {
+        int tmp = input[a];
+        input[a] = input[b];
+        input[b] = tmp;
+    }
+
+    /*
     public static void partition(int[] input, int pivotIndex) {
         // FIXME: check pivotIndex for index bounds
 
@@ -43,4 +93,5 @@ public class PivotedPartitioner {
 
         return mi;
     }
+    */
 }
