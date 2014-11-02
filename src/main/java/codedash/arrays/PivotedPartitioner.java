@@ -11,9 +11,7 @@ public class PivotedPartitioner {
 
 
     public static void partition(int[] input, int pivotIndex) {
-        if (pivotIndex < 0 || pivotIndex >= input.length) {
-            throw new ArrayIndexOutOfBoundsException("bad index");
-        }
+        assert (pivotIndex >= 0 && pivotIndex < input.length);
 
         Preconditions.checkNotNull(input);
 
