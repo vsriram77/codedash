@@ -11,6 +11,10 @@ public class PivotedPartitionerTest {
 
     @Test
     public void testPartition() throws Exception {
+        int [] input4 = { 1, 10, 100, 200};
+        PivotedPartitioner.partition(input4, 0);
+        Assert.assertEquals(input4[0], 1);
+
         int [] input2 = { 10, 10, 10, 5, 10, 3};
         PivotedPartitioner.partition(input2, 3);
         Assert.assertEquals(input2[1], 5);
@@ -22,10 +26,6 @@ public class PivotedPartitionerTest {
         int [] input3 = { 10, 100, 20, 33, 4};
         PivotedPartitioner.partition(input3, 3);
         Assert.assertEquals(input3[2], 20);
-
-        int [] input4 = { 1, 10, 100, 200};
-        PivotedPartitioner.partition(input4, 0);
-        Assert.assertEquals(input4[0], 1);
 
         int [] input5 = { 1, 10, 100, 200};
         PivotedPartitioner.partition(input4, 3);
