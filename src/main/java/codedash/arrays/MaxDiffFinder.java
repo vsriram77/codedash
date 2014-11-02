@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Max Diff Finder
+ * Max Diff Finder (variation of epi6.8)
  */
 public class MaxDiffFinder {
 

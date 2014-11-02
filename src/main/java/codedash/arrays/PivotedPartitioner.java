@@ -7,9 +7,6 @@ import com.google.common.base.Preconditions;
  */
 public class PivotedPartitioner {
 
-
-
-
     public static void partition(int[] input, int pivotIndex) {
         assert (pivotIndex >= 0 && pivotIndex < input.length);
 
