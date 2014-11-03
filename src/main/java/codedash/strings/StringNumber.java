@@ -1,10 +1,50 @@
 package codedash.strings;
 
 /**
- * Store number as a string and convert string to number and viceversa
- * 10.05am
+ * Store number as a string and convert string to number and viceversa (epi7.1)
+ *
  */
 public class StringNumber {
+
+    public static int atoi(String value) {
+
+        int result = 0;
+        int baseVal = 1;
+        for (int i = value.length() - 1; i >= 0; i--) {
+            char c = value.charAt(i);
+            if (c == '-') {
+                result = -result;
+            } else {
+                result += (value.charAt(i) - '0') * baseVal;
+            }
+            baseVal *= 10;
+        }
+
+        return result;
+    }
+
+    public static String itoa(int value) {
+        StringBuilder sb = new StringBuilder();
+        boolean negative = false;
+        if (value < 0) {
+            negative = true;
+            value = -value;
+        } else if (value == 0) {
+            return "0";
+        }
+
+        while (value > 0) {
+            int digit = value % 10;
+            sb.append(digit);
+            value = value / 10;
+        }
+
+        if (negative) {
+            sb.append("-");
+        }
+
+        return sb.reverse().toString();
+    }
 
     private String value;
 
