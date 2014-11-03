@@ -30,4 +30,20 @@ public class StringNumberTest {
 
     }
 
+    @Test
+    public void testAtoi() {
+        Assert.assertEquals(StringNumber.atoi("123"), 123);
+        Assert.assertEquals(StringNumber.atoi("0"), 0);
+        Assert.assertEquals(StringNumber.atoi("22222"), 22222);
+        Assert.assertEquals(StringNumber.atoi("-3555"), -3555);
+    }
+
+    @Test
+    public void testItoa() {
+        Assert.assertEquals(StringNumber.itoa(123), "123");
+        Assert.assertEquals(StringNumber.itoa(0), "0");
+        Assert.assertEquals(StringNumber.itoa(22222), "22222");
+        Assert.assertEquals(StringNumber.itoa(-3555), "-3555");
+    }
+
 }
